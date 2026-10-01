@@ -20,8 +20,7 @@ public/
 
 Framework preset: `None`. Build command: vazio. Build output directory: `public`.
 
-## Identificação (preencha após o fork)
-
+## Identificação 
 Nome: Beatrys Belo 
 RA: 2026108406
 URL: https://2bim-avalia-beatrys.pages.dev/

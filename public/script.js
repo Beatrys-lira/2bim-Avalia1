@@ -25,7 +25,7 @@ function desconectar() {
   botaoBaixar.hidden = true;
   campoNumero.disabled = true;
   botaoGerar.disabled = true;
-  botaoGerar.textContent = "Criar meu desenho ↗";
+  botaoGerar.textContent = "Gerar desenho";
   estudio.hidden = true;
   login.hidden = false;
   foto.hidden = true;
@@ -78,7 +78,7 @@ window.receberLogin = async function (resposta) {
 
 document.getElementById("sair").addEventListener("click", () => {
   desconectar();
-  mensagem.textContent = "Até a próxima! Seu espaço criativo espera por você.";
+  mensagem.textContent = "Você saiu da conta. Entre novamente para gerar um desenho.";
   window.google?.accounts?.id?.disableAutoSelect();
 });
 
@@ -131,7 +131,7 @@ formulario.addEventListener("submit", async (evento) => {
   } finally {
     if (atual === versao && tokenGoogle) {
       botaoGerar.disabled = false;
-      botaoGerar.textContent = "Criar meu desenho ↗";
+      botaoGerar.textContent = "Gerar desenho";
     }
   }
 });

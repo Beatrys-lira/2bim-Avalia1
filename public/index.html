@@ -3,31 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#fff7fa">
   <title>Desenho Assinado</title>
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
   <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
-  <header class="topo"><a class="marca" href="./"><span class="simbolo" aria-hidden="true">✳</span> Desenho Assinado<span class="marca-ponto">.</span></a><span class="etiqueta">UM NÚMERO. SUA ASSINATURA.</span></header>
   <main>
-    <section id="login" class="entrada">
-      <div class="apresentacao"><span class="sobretitulo">UM POUCO DE MATEMÁTICA, MUITO DE VOCÊ</span><h1>Seu número.<br>Seu traço.<br><em>Sua identidade.</em></h1><p>Transforme um número em uma figura única, com as cores de uma nova ideia e a assinatura da sua conta Google.</p><div class="detalhes"><span>240 pontos conectados</span><span>100 possibilidades</span></div></div>
-      <div class="cartao-login"><div class="ornamento" aria-hidden="true">✳</div><span class="sobretitulo">SEU ESPAÇO CRIATIVO</span><h2>Que bom te ver aqui!</h2><p>Entre com sua conta Google para criar um desenho e deixar sua assinatura.</p>
+    <header><h1>Desenho Assinado</h1><p>Escolha um número de 1 a 100 para gerar um desenho assinado com o e-mail da sua conta Google.</p></header>
+    <section class="conta" aria-label="Conta Google">
+      <div id="login"><h2>Entre para começar</h2><p>Faça login com Google para liberar a geração do desenho.</p>
         <div id="g_id_onload" data-client_id="59170075064-jfndmcohrnb8f74likejjdmv3ebqa5t7.apps.googleusercontent.com" data-callback="receberLogin" data-auto_prompt="false"></div>
-        <div class="google"><div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline" data-text="signin_with" data-shape="pill"></div></div>
-        <p class="nota">Sua assinatura vem da sua conta.<br>Seu desenho começa com você.</p>
+        <div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline" data-text="signin_with" data-shape="pill"></div>
       </div>
+      <div id="estudio" hidden><div class="perfil"><div class="avatar"><span id="iniciais" aria-hidden="true"></span><img id="foto" alt="Foto do perfil Google" referrerpolicy="no-referrer" hidden></div><div class="dados"><h2 id="saudacao"></h2><p>Que bom ter você aqui!</p><strong id="nome"></strong><span id="email"></span></div><button id="sair" type="button" class="secundario">Sair</button></div></div>
     </section>
-    <section id="estudio" hidden>
-      <div class="boas-vindas"><div><span class="sobretitulo">BEM-VINDO AO SEU ESTÚDIO</span><h1 id="saudacao"></h1><p>Que bom ter você aqui. Vamos transformar um número em arte?</p></div><div class="perfil"><div class="avatar"><span id="iniciais" aria-hidden="true"></span><img id="foto" alt="Foto do seu perfil Google" referrerpolicy="no-referrer" hidden></div><div><strong id="nome"></strong><span id="email"></span></div><button id="sair" class="botao-texto" type="button">Sair</button></div></div>
-      <div class="workspace"><aside class="painel"><span class="passo">01 / ESCOLHA</span><h2>Tudo começa<br>com um número.</h2><p>Escolha de 1 a 100 e descubra a figura que ele pode criar.</p><form id="formulario" novalidate><label for="numero">Qual é o seu número?</label><input id="numero" name="numero" type="number" min="1" max="100" step="1" required placeholder="Ex.: 6" disabled><button id="gerar" class="principal" type="submit" disabled>Criar meu desenho <span aria-hidden="true">↗</span></button></form><div class="assinatura"><span aria-hidden="true">✓</span><p>Assinado com o e-mail<br>da sua conta Google.</p></div></aside>
-        <section class="resultado" aria-label="Seu desenho"><div class="resultado-topo"><span class="passo">02 / SUA CRIAÇÃO</span><button id="baixar" type="button" class="secundario" hidden>Baixar SVG ↓</button></div><div id="vazio" class="vazio"><span class="flor" aria-hidden="true">✳</span><h2>Uma ideia esperando<br>para ganhar forma.</h2><p>Escolha um número ao lado.<br>Seu desenho vai aparecer aqui.</p></div><figure id="desenho" aria-live="polite"></figure></section>
-      </div>
-    </section>
-    <p id="mensagem" role="alert" tabindex="-1"></p>
+    <form id="formulario" novalidate><label for="numero">Número</label><div class="campos"><input id="numero" name="numero" type="number" min="1" max="100" step="1" required placeholder="Ex.: 6" disabled><button id="gerar" type="submit" disabled>Gerar desenho</button></div></form>
+    <p id="mensagem" role="alert"></p>
+    <section class="resultado" aria-label="Desenho gerado"><div id="vazio"><p>Seu desenho aparecerá aqui.</p></div><figure id="desenho" aria-live="polite"></figure><button id="baixar" type="button" hidden>Baixar SVG</button></section>
   </main>
-  <footer><span>Matemática que vira arte.</span><span>Feito para explorar, criar e assinar.</span></footer>
 </body>
 </html>
